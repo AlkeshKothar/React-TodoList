@@ -1,9 +1,7 @@
 import InputText from "./inputext";
 import Button from "./button"
 const List = (props) => {
-    
-    
-    console.log(props.todolist)
+
     const listMaxIndex = props.todolist.length - 1;
     const listItems = props.todolist.map((listItem,index) => 
     
@@ -21,13 +19,10 @@ const List = (props) => {
             const editValue = event.target.value;
             props.onChangeEdit(index, editValue)}
             }></InputText>
-
         <Button onButtonClick={()=>{props.onEditSubmitClick(index)}}
          className="btn btn-outline-dark" buttonText="Submit"  type="button">SUBMIT</Button>
-
         <Button  onButtonClick={()=>{props.onEditCancel(index)}}
          className="btn btn-outline-dark" buttonText="CANCEL" type="button">CANCEL</Button>
-
     </>
 )}
 
@@ -66,13 +61,10 @@ const List = (props) => {
     </>)
 } 
 </div>));
-    
+
     return ( 
         <div className="pb-5 mb-4">{listItems} </div>
     )
- 
-
 }
-
 
 export default List;

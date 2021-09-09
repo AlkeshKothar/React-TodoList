@@ -8,7 +8,6 @@ const TodoList = () =>{
     const [inputTextVal, setInputTextVal] = useState('');
     const [todoList, setTodoList] = useState([]);
 
-
     useEffect(()=>{
         const localTodoList = localStorage.getItem('todoList');
         if(localTodoList){
@@ -17,7 +16,6 @@ const TodoList = () =>{
         }
     },[]);
 
-
     const inputTextChangeHandler = (event)=>{
         const textValue = event.target.value;
         setInputTextVal(textValue);
@@ -25,10 +23,8 @@ const TodoList = () =>{
 
     const buttonClickHandler = ()=>{
         if(inputTextVal.trim()){
-            console.log("CLcik add button");
             setInputTextVal('')
             const list = [...todoList];
-            // {item:'A, isDone: false}
             const listItem = {
                 item:inputTextVal,
                 itemEditText:inputTextVal,
@@ -44,7 +40,6 @@ const TodoList = () =>{
     };
 
     const inputKeyUpHandler = (event)=>{
-        // event.key ===> 'Enter',
         if(event.which === 13){
             buttonClickHandler();
         }
